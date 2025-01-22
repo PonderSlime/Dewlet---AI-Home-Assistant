@@ -1996,348 +1996,6 @@
 				)
 			)
 		)
-		(symbol "Adafruit MAX9744-eagle-import:AUDIO_3.5MMJACK"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "X"
-				(at -5.08 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.0795)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" ""
-				(at -5.08 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.0795)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "Adafruit MAX9744:4UCONN_19269"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "3.5MM Audio Jack\n\nThese are normally connected as follows, from left-to right on the schematic symbol above:\n\n• Tip: Left Audio\n• Inner Ring: Right Audio\n• Shell: Common/GND"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "AUDIO_3.5MMJACK_1_0"
-				(arc
-					(start -8.89 -1.27)
-					(mid -8.518 -2.168)
-					(end -7.62 -2.54)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -7.62 -2.54)
-					(mid -6.722 -2.168)
-					(end -6.35 -1.27)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -6.35 5.08) (xy -6.35 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 1.27) (xy -5.08 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 2.54) (xy -3.81 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -3.81) (xy -2.54 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -5.08) (xy -1.27 -3.81)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -5.08) (xy 0 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy -2.54 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -5.08) (xy 2.54 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 2.54 0)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 5.08) (xy -6.35 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin bidirectional line
-					(at 7.62 5.08 180)
-					(length 2.54)
-					(name "P$1"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 7.62 -5.08 180)
-					(length 2.54)
-					(name "P$5"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 7.62 2.54 180)
-					(length 2.54)
-					(name "P$2"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 7.62 -2.54 180)
-					(length 2.54)
-					(name "P$4"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "P$3"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Adafruit MAX9744-eagle-import:CAP_CERAMIC0805-NOOUTLINE"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4058,168 +3716,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Adafruit MAX9744-eagle-import:TERMBLOCK_1X3"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "X"
-				(at -2.54 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.0795)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" ""
-				(at -2.54 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.0795)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "Adafruit MAX9744:TERMBLOCK_1X3-3.5MM"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "3.5mm Terminal block\n\nhttp://www.ladyada.net/library/pcb/eaglelibrary.html"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TERMBLOCK_1X3_1_0"
-				(polyline
-					(pts
-						(xy -2.54 -5.08) (xy 5.08 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 5.08) (xy -2.54 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -5.08) (xy 5.08 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 5.08) (xy -2.54 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 5.08)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
 						(effects
 							(font
 								(size 0 0)
@@ -7754,10 +7250,6 @@
 		(uuid "30bb9c9b-12fd-47a1-8777-6c2535381576")
 	)
 	(no_connect
-		(at 200.66 48.26)
-		(uuid "54afae2a-e219-4f02-b407-b4880e4a6d1a")
-	)
-	(no_connect
 		(at 100.33 55.88)
 		(uuid "5e482662-8255-4585-aa50-1b01eb605b73")
 	)
@@ -7820,10 +7312,6 @@
 	(no_connect
 		(at 243.84 68.58)
 		(uuid "b8017fac-21cf-4be0-8dc3-6f94be8af911")
-	)
-	(no_connect
-		(at 200.66 50.8)
-		(uuid "bed4d56e-d8bd-445b-a238-d704ea1f74d8")
 	)
 	(no_connect
 		(at 243.84 60.96)
@@ -8026,16 +7514,6 @@
 			(type default)
 		)
 		(uuid "07adb05a-4d3f-4378-8142-cfc78d6f5642")
-	)
-	(wire
-		(pts
-			(xy 200.66 43.18) (xy 203.2 43.18)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "09458d3f-133a-461c-8ad4-e3b3e4ae6bbd")
 	)
 	(wire
 		(pts
@@ -9649,16 +9127,6 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 45.72) (xy 220.98 45.72)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "9e7f1a2d-1680-4f3f-955c-60c772d748d6")
-	)
-	(wire
-		(pts
 			(xy 349.25 128.27) (xy 349.25 133.35)
 		)
 		(stroke
@@ -9796,16 +9264,6 @@
 			(type solid)
 		)
 		(uuid "ade20bcd-5462-4b15-8227-23430f4647ca")
-	)
-	(wire
-		(pts
-			(xy 200.66 53.34) (xy 220.98 53.34)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "ae90c8a8-8b05-4102-ae72-99e23f93d7f1")
 	)
 	(wire
 		(pts
@@ -10439,16 +9897,6 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 71.12) (xy 223.52 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f07c1f6e-3554-4498-9a80-b00e55c804eb")
-	)
-	(wire
-		(pts
 			(xy 35.56 227.33) (xy 25.4 227.33)
 		)
 		(stroke
@@ -10611,17 +10059,6 @@
 			)
 		)
 		(uuid "c32b5e60-9b08-4927-b0c3-0bd39790b293")
-	)
-	(label "RIGHTIN"
-		(at 210.82 45.72 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "080f53bc-fbef-4ade-be14-6b2a5ea132d6")
 	)
 	(label "ID_SDA"
 		(at 31.75 60.96 0)
@@ -11140,17 +10577,6 @@
 		)
 		(uuid "dd84032d-59e4-433e-8d6b-3f1b3b0e127c")
 	)
-	(label "LEFTIN"
-		(at 210.82 53.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "e892697c-f381-4951-833d-d1431e3b73a2")
-	)
 	(label "WS"
 		(at 102.87 238.76 0)
 		(fields_autoplaced yes)
@@ -11250,6 +10676,28 @@
 			)
 		)
 	)
+	(global_label "RIGHTIN"
+		(shape input)
+		(at 198.12 68.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1a557805-b48d-4744-b50f-cb3c1845c732")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 187.6615 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "R Audio Amp -"
 		(shape input)
 		(at 334.01 41.91 180)
@@ -11338,6 +10786,28 @@
 			)
 		)
 	)
+	(global_label "LEFTIN"
+		(shape input)
+		(at 100.33 66.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4a52120d-dbee-4e04-89ee-fd21a8089b5e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 109.5789 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "LRCL_L"
 		(shape input)
 		(at 135.89 238.76 0)
@@ -11382,6 +10852,28 @@
 			)
 		)
 	)
+	(global_label "LEFTIN"
+		(shape input)
+		(at 198.12 73.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5b2be9e7-3522-445f-add9-7e49432e438f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 188.8711 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "DATA_L"
 		(shape input)
 		(at 114.3 171.45 0)
@@ -11422,6 +10914,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RIGHTIN"
+		(shape input)
+		(at 31.75 68.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b738b820-c7d1-4004-a489-2b7bdc55daf5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.2915 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -12657,144 +12171,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Adafruit MAX9744-eagle-import:AGND")
-		(at 205.74 43.18 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1bf93a19-8590-4d3f-b3fd-25341292065d")
-		(property "Reference" "#U$014"
-			(at 205.74 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "AGND"
-			(at 208.28 44.704 0)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" ""
-			(at 205.74 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 205.74 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 205.74 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9931c672-dda5-4703-b35c-1af0f2666148")
-		)
-		(instances
-			(project "dewlet"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#U$014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit MAX9744-eagle-import:TERMBLOCK_1X3")
-		(at 193.04 71.12 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1c49cee1-a92b-4717-8d0c-d2914e18a1f3")
-		(property "Reference" "X1"
-			(at 195.58 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Value" "3.5mm"
-			(at 195.58 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Adafruit MAX9744:TERMBLOCK_1X3-3.5MM"
-			(at 193.04 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 193.04 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7f8791d3-7e8f-4cd3-b20a-67fa596d367d")
-		)
-		(pin "2"
-			(uuid "71758d63-6bb1-41af-a5ee-666858f876e5")
-		)
-		(pin "3"
-			(uuid "04edaeb5-7db3-4f5d-8ce0-44ef454e3520")
-		)
-		(instances
-			(project "dewlet"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "X1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Adafruit MAX9744-eagle-import:FERRITE_0805")
 		(at 334.01 60.96 0)
 		(unit 1)
@@ -13270,84 +12646,6 @@
 			(project "dewlet"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "#U$013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit MAX9744-eagle-import:AUDIO_3.5MMJACK")
-		(at 193.04 48.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "384d1a23-5c72-44cf-a910-bae88caec07b")
-		(property "Reference" "X2"
-			(at 187.96 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Value" "3.5mm"
-			(at 187.96 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Adafruit MAX9744:4UCONN_19269"
-			(at 193.04 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 193.04 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2effb60d-ea10-44df-b157-b070786d0173")
-		)
-		(pin "2"
-			(uuid "b73d9d04-b014-4edd-9e5c-0ca3d54c7021")
-		)
-		(pin "3"
-			(uuid "679ba272-e37d-4087-bc32-be05ebd6f1c2")
-		)
-		(pin "4"
-			(uuid "628f0217-9aae-459a-9338-a21908d7d044")
-		)
-		(pin "5"
-			(uuid "af4b9459-6d89-4331-a920-997f83184d2f")
-		)
-		(instances
-			(project "dewlet"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "X2")
 					(unit 1)
 				)
 			)
@@ -16440,72 +15738,6 @@
 			(project ""
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit MAX9744-eagle-import:AGND")
-		(at 226.06 71.12 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9adfd2f3-b5b3-45b7-8078-1f0d0f3a16f8")
-		(property "Reference" "#U$015"
-			(at 226.06 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "AGND"
-			(at 228.6 72.644 0)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" ""
-			(at 226.06 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 226.06 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 226.06 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8797b9b0-c906-41e1-b7db-2b18d8120254")
-		)
-		(instances
-			(project "dewlet"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#U$015")
 					(unit 1)
 				)
 			)
