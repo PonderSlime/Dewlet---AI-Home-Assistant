@@ -1,10 +1,9 @@
 import time
 import webrtcvad
 import whisper
-
+import torch
 import sounddevice as sd
 import numpy as np
-from PyQt5.QtCore import QObject
 
 import ollama
 import sys
@@ -17,14 +16,16 @@ from mediaplayer import control_media
 import re
 from tts_worker import TTSWorker
 
-model = whisper.load_model("small")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+model = whisper.load_model("small",device=device)
 SAMPLE_RATE = 16000
 DURATION = 1
 PAUSE_THRESHOLD = 5
 frame_duration_ms = 20
 frame_size = int(SAMPLE_RATE * frame_duration_ms / 1000)
 
-class App(QObject):
+class App:
 
     def __init__(self):
         super().__init__()
@@ -107,6 +108,7 @@ class App(QObject):
 
         transcription_buffer = ""
         self.processing_transcription = False
+
     def transcribe_audio(self, indata, frames, time, status):
         global transcription_buffer
         if status:
@@ -124,7 +126,7 @@ class App(QObject):
                 self.silence_duration += 1
 
         if self.silence_duration > 10:
-            #print("Silence detected, stopping transcription.")
+            # print("Silence detected, stopping transcription.")
             self.silence_duration = 0
             sd.stop()
             self.process_transcription()
@@ -139,8 +141,8 @@ class App(QObject):
         self.play_tts(response)
 
     def play_tts(self, text):
-        self.tts_worker = TTSWorker(text, self)
-        self.tts_worker.start()
+        self.tts_worker = TTSWorker(text)
+        self.tts_worker.run()
 
     def run_ai(self):
         try:
@@ -170,7 +172,7 @@ class App(QObject):
         speech = query.lower()
         if "google" in speech:
             return "google", query[len("google"):].strip(), False
-        elif any(variant in speech for variant in ["weather in", "weather? in", "weather like"]):
+        elif any(variant in speech for variant in ["weather in", "weather? in", "weather like", "weather?like"]):
             return "weather", query.split("in")[-1].strip(), False
 
         elif "spotify" in speech:
@@ -209,15 +211,6 @@ class App(QObject):
         except Exception as e:
             return f"Failed to fetch weather data: {str(e)}"
 
-    def cleanup(self):
-        if self.worker_thread:
-            self.worker_thread.quit()
-            self.worker_thread.wait()
-        if self.tts_worker:
-            self.tts_worker.quit()
-            self.tts_worker.wait()
-
 if __name__ == "__main__":
     app_instance = App()
     app_instance.run_ai()
-    app_instance.cleanup()

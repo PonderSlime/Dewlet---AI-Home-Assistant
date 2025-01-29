@@ -5,16 +5,15 @@ import threading
 from pydub import AudioSegment
 from pydub.playback import play
 import tempfile
-from PyQt5.QtCore import QThread
 
 from piper.voice import PiperVoice
 import librosa
 import numpy as np
 
-class TTSWorker(QThread):
+class TTSWorker:
 
-    def __init__(self, input, parent=None):
-        super().__init__(parent)
+    def __init__(self, input):
+        super().__init__()
         self.text = input
         self.audio_played_event = threading.Event()
 
@@ -25,7 +24,7 @@ class TTSWorker(QThread):
     def run(self):
         temp_file_path = None
         try:
-            model = self.get_resource_path("src/micah/en_US-micah-medium.onnx")
+            model = self.get_resource_path("src/micah/large/en_US-micah-large.onnx")
             #print(f"Looking for ONNX model at: {model}")
 
             voice = PiperVoice.load(model)
