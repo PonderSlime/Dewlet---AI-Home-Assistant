@@ -2,3 +2,4 @@
 *.onnx.json
 .idea/
 piper/
+piper-recording-studio/

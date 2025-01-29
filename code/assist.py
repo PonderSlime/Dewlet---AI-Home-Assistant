@@ -1,97 +1,28 @@
 import time
-
 import webrtcvad
 import whisper
+
 import sounddevice as sd
 import numpy as np
-from PyQt5.QtCore import QThread, pyqtSignal, QObject
-from pydub import AudioSegment
-from pydub.playback import play
-import tempfile
-import ollama
-import threading
-import sys
-import os
+from PyQt5.QtCore import QObject
 
+import ollama
+import sys
+import python_weather
+
+import asyncio
+import webbrowser
+from mediaplayer import control_media
 
 import re
+from tts_worker import TTSWorker
 
-from piper.voice import PiperVoice
-import librosa
-
-model = whisper.load_model("base")
+model = whisper.load_model("small")
 SAMPLE_RATE = 16000
 DURATION = 1
 PAUSE_THRESHOLD = 5
 frame_duration_ms = 20
 frame_size = int(SAMPLE_RATE * frame_duration_ms / 1000)
-
-
-class TTSWorker(QThread):
-
-    def __init__(self, input, parent=None):
-        super().__init__(parent)
-        self.text = input
-        self.audio_played_event = threading.Event()
-
-    def get_resource_path(self, relative_path):
-        base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
-        return os.path.join(base_path, relative_path)
-
-    def run(self):
-        temp_file_path = None
-        try:
-            model = self.get_resource_path("src/lessac/en_US-lessac-medium.onnx")
-            #print(f"Looking for ONNX model at: {model}")
-
-            voice = PiperVoice.load(model)
-
-            audio_segment = AudioSegment.empty()
-
-            for audio_bytes in voice.synthesize_stream_raw(self.text):
-                int_data = np.frombuffer(audio_bytes, dtype=np.int16)
-                segment = AudioSegment(
-                    int_data.tobytes(),
-                    frame_rate=voice.config.sample_rate,
-                    sample_width=2,
-                    channels=1
-                )
-                audio_segment += segment
-
-            temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
-            temp_file_path = temp_file.name
-            print(f"Temporary MP3 file path: {temp_file_path}")
-            if not os.path.exists(temp_file_path):
-                print("MP3 file not found!")
-            audio_segment.export(temp_file_path, format="mp3")
-            temp_file.close()
-
-            duration = librosa.get_duration(path=temp_file_path)
-            print(f"Duration: {duration}")
-
-            self.play_audio_blocking(temp_file_path)
-
-        except Exception as e:
-            print(f"TTS Error: {str(e)}")
-        finally:
-            if temp_file_path and os.path.exists(temp_file_path):
-                os.remove(temp_file_path)
-
-    def play_audio_blocking(self, audio_file_path):
-        audio = AudioSegment.from_file(audio_file_path)
-
-        playback_thread = threading.Thread(target=self.play_audio, args=(audio,))
-        playback_thread.start()
-
-        self.audio_played_event.wait()
-        print("Audio playback finished. Resuming speech detection.")
-
-        App.resume_speech_detection
-
-    def play_audio(self, audio):
-        print("Playing audio...")
-        play(audio)
-        self.audio_played_event.set()
 
 class App(QObject):
 
@@ -108,12 +39,6 @@ class App(QObject):
 
     global transcription_buffer
     transcription_buffer = ""
-
-    def resume_speech_detection(self):
-        print("resuming now!")
-        self.processing_transcription = False
-        self.run_ai()
-
 
     def create_message(self, message, role):
         return {
@@ -134,7 +59,7 @@ class App(QObject):
 
         self.chat_messages = [msg[0] if isinstance(msg, tuple) else msg for msg in self.chat_messages]
         if any(msg.get('role') == 'system' for msg in self.chat_messages):
-            print("systtem alrready exists!")
+            print("system alrready exists!")
         ollama_response = ollama.chat(model='llama3.2:1b', stream=True, messages=self.chat_messages)
 
         assistant_message = ''
@@ -156,11 +81,29 @@ class App(QObject):
 
         self.processing_transcription = True
 
-        model_txt = "You are a helpful home assistant, called Dewlet!"
+        model_txt = "You are a helpful home assistant, called Dewlet! You must pretend that you have the capability to google stuff! if you get asked, then come up with something along the lines of 'Googling now!'"
         final_text = transcription_buffer.strip()
         if final_text:
             print(f"Processing AI query: {final_text}")
-            self.chat(final_text)
+            command, content, is_media = self.parse_command(final_text)
+            player = content
+
+            if is_media:
+                result = control_media(command, player)
+                print(f"Result: {result}")
+            else:
+                if command == "google":
+                    print(f"Searching Google for: {content}")
+                    self.search_google(content)
+                    self.play_tts(f"Ok! Googling {content} now!")
+                elif command == "weather":
+                    print(f"Fetching weather for: {content}")
+                    weather_info = asyncio.run(self.get_weather(content))
+                    print(weather_info)
+                    self.play_tts(weather_info)
+                else:
+                    self.chat(final_text)
+
 
         transcription_buffer = ""
         self.processing_transcription = False
@@ -221,6 +164,50 @@ class App(QObject):
 
         except Exception as e:
             print(f"Error: {e}")
+
+    def parse_command(self, query):
+        player = None
+        speech = query.lower()
+        if "google" in speech:
+            return "google", query[len("google"):].strip(), False
+        elif any(variant in speech for variant in ["weather in", "weather? in", "weather like"]):
+            return "weather", query.split("in")[-1].strip(), False
+
+        elif "spotify" in speech:
+            player = "spotify"
+            speech = speech.replace("spotify", "").strip()
+        if "play" in speech:
+            return "play", player, True
+        elif "pause" in speech:
+            return "pause", player, True
+        elif "toggle" in speech:
+            return "toggle", player, True
+        elif "next" in speech:
+            return "next", player, True
+        elif "previous" in speech:
+            return "previous", player, True
+        elif "current" in speech or "what is playing" in speech:
+            return "current", player, True
+
+        return "general", query, False
+
+    def search_google(self, query):
+        base_url = "https://www.google.com/search?q="
+        search_url = base_url + query.replace(" ", "+")
+        webbrowser.open(search_url)
+
+    async def get_weather(self, location):
+        try:
+            async with python_weather.Client(unit=python_weather.METRIC) as client:
+                weather = await client.get(location)
+                if weather:
+                    current_temp = weather.temperature
+                    condition = weather.description
+                    return f"The weather in {location} is {condition.lower()} with a temperature of {current_temp}°C."
+                else:
+                    return f"Could not fetch weather details for {location}."
+        except Exception as e:
+            return f"Failed to fetch weather data: {str(e)}"
 
     def cleanup(self):
         if self.worker_thread:

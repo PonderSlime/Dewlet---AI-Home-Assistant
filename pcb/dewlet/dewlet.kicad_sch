@@ -5660,176 +5660,6 @@
 				)
 			)
 		)
-		(symbol "Device:R_US"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.54 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R_US"
-				(at -2.54 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.016 -0.254 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor, US symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_US_0_1"
-				(polyline
-					(pts
-						(xy 0 -2.286) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_US_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "GND_1"
 			(power)
 			(pin_numbers hide)
@@ -7313,12 +7143,6 @@
 		(uuid "9340c285-5767-42d5-8b6d-63fe2a40ddf3")
 	)
 	(junction
-		(at 368.3 39.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a4d50e87-991a-4c02-8c5a-3f0f4cfdd372")
-	)
-	(junction
 		(at 182.88 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7341,12 +7165,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b9393110-f2ae-4f8f-a9e7-3a5c1c197f35")
-	)
-	(junction
-		(at 365.76 34.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c2aec289-54db-4f34-b7d6-b153f3e2d4d7")
 	)
 	(junction
 		(at 316.23 110.49)
@@ -7585,10 +7403,6 @@
 	(no_connect
 		(at 100.33 53.34)
 		(uuid "f1877dc2-1f3e-44cb-abe2-3f7a5b364d00")
-	)
-	(no_connect
-		(at 392.43 232.41)
-		(uuid "f33b8e33-5776-4d97-94c3-840e75e02f3b")
 	)
 	(wire
 		(pts
@@ -7912,6 +7726,16 @@
 	)
 	(wire
 		(pts
+			(xy 368.3 46.99) (xy 368.3 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bff67c5-6c31-4c55-addb-3529c46c3cc3")
+	)
+	(wire
+		(pts
 			(xy 25.4 170.18) (xy 25.4 172.72)
 		)
 		(stroke
@@ -8032,23 +7856,13 @@
 	)
 	(wire
 		(pts
-			(xy 334.01 39.37) (xy 368.3 39.37)
+			(xy 334.01 38.1) (xy 368.3 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "25ec5731-3559-4b0a-b7bf-152bccc95bf9")
-	)
-	(wire
-		(pts
-			(xy 365.76 34.29) (xy 381 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25fc6bce-6c1c-4a57-8609-2c95c4ea3ff0")
 	)
 	(wire
 		(pts
@@ -8232,6 +8046,16 @@
 	)
 	(wire
 		(pts
+			(xy 334.01 48.26) (xy 368.3 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37bb84fe-80ce-4a68-bad2-8a25834c5cc6")
+	)
+	(wire
+		(pts
 			(xy 364.49 71.12) (xy 369.57 71.12)
 		)
 		(stroke
@@ -8239,16 +8063,6 @@
 			(type solid)
 		)
 		(uuid "3835499c-6198-4f33-8e08-d9e1ddb631c1")
-	)
-	(wire
-		(pts
-			(xy 365.76 36.83) (xy 365.76 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "389a1195-6cc4-476e-878e-19fa24983d92")
 	)
 	(wire
 		(pts
@@ -8462,16 +8276,6 @@
 	)
 	(wire
 		(pts
-			(xy 368.3 41.91) (xy 368.3 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4a8037c5-bcc2-4961-a114-7012819d4e02")
-	)
-	(wire
-		(pts
 			(xy 344.17 224.79) (xy 344.17 223.52)
 		)
 		(stroke
@@ -8652,16 +8456,6 @@
 	)
 	(wire
 		(pts
-			(xy 361.95 34.29) (xy 365.76 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5749582f-72e2-4400-a15e-c051655481cc")
-	)
-	(wire
-		(pts
 			(xy 55.88 24.13) (xy 55.88 27.94)
 		)
 		(stroke
@@ -8742,16 +8536,6 @@
 	)
 	(wire
 		(pts
-			(xy 334.01 41.91) (xy 368.3 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "60ccc498-2729-454f-9754-8c6cd05b2503")
-	)
-	(wire
-		(pts
 			(xy 278.13 39.37) (xy 278.13 43.18)
 		)
 		(stroke
@@ -8812,7 +8596,7 @@
 	)
 	(wire
 		(pts
-			(xy 334.01 34.29) (xy 354.33 34.29)
+			(xy 334.01 34.29) (xy 381 34.29)
 		)
 		(stroke
 			(width 0)
@@ -8982,16 +8766,6 @@
 	)
 	(wire
 		(pts
-			(xy 361.95 36.83) (xy 365.76 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "77af33ac-2f43-4ff5-ad71-e8f6db399912")
-	)
-	(wire
-		(pts
 			(xy 243.84 35.56) (xy 246.38 35.56)
 		)
 		(stroke
@@ -9072,16 +8846,6 @@
 	)
 	(wire
 		(pts
-			(xy 334.01 36.83) (xy 354.33 36.83)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "7d79969f-9b15-40c4-8995-16adf8743d22")
-	)
-	(wire
-		(pts
 			(xy 76.2 43.18) (xy 73.66 43.18)
 		)
 		(stroke
@@ -9149,6 +8913,16 @@
 			(type solid)
 		)
 		(uuid "85bd9bea-9b41-4249-9626-26358781edd8")
+	)
+	(wire
+		(pts
+			(xy 334.01 44.45) (xy 381 44.45)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "86355e49-ace9-4f45-a19f-44d766fe8cba")
 	)
 	(wire
 		(pts
@@ -9612,6 +9386,16 @@
 	)
 	(wire
 		(pts
+			(xy 381 46.99) (xy 368.3 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0bc17ad-43fd-42a5-bd5a-682f5d9217d4")
+	)
+	(wire
+		(pts
 			(xy 25.4 157.48) (xy 25.4 162.56)
 		)
 		(stroke
@@ -9682,7 +9466,7 @@
 	)
 	(wire
 		(pts
-			(xy 368.3 36.83) (xy 368.3 39.37)
+			(xy 368.3 36.83) (xy 368.3 38.1)
 		)
 		(stroke
 			(width 0)
@@ -10538,7 +10322,7 @@
 		(uuid "3911220d-b117-4874-8479-50c0285caa70")
 	)
 	(label "L Audio Amp -"
-		(at 354.33 39.37 180)
+		(at 354.33 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10746,6 +10530,17 @@
 		)
 		(uuid "8fb0631c-564a-4f96-b39b-2f827bb204a3")
 	)
+	(label "R Audio Amp +"
+		(at 354.33 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "90d85d1d-33f0-40a7-b3ad-445831fe5d2d")
+	)
 	(label "GPIO17"
 		(at 31.75 40.64 0)
 		(fields_autoplaced yes)
@@ -10778,17 +10573,6 @@
 			(justify right bottom)
 		)
 		(uuid "9d507609-a820-4ac3-9e87-451a1c0e6633")
-	)
-	(label "R Audio Amp +"
-		(at 354.33 36.83 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9dd3e26a-92cd-4019-baa0-963ec9d067ad")
 	)
 	(label "GPIO3{slash}SCL1"
 		(at 31.75 33.02 0)
@@ -10922,6 +10706,17 @@
 		)
 		(uuid "dd84032d-59e4-433e-8d6b-3f1b3b0e127c")
 	)
+	(label "R Audio Amp -"
+		(at 354.33 48.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "de0b265a-3ca6-4d68-8bc6-f94a871e70b0")
+	)
 	(label "WS"
 		(at 102.87 238.76 0)
 		(fields_autoplaced yes)
@@ -10932,17 +10727,6 @@
 			(justify left bottom)
 		)
 		(uuid "efc19b72-d85a-4035-9d0c-cc9f787578a6")
-	)
-	(label "R Audio Amp -"
-		(at 354.33 41.91 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f1abf172-53c3-4cb3-b7c8-d816189f6768")
 	)
 	(label "GPIO11{slash}SPI0.SCLK"
 		(at 31.75 55.88 0)
@@ -11017,28 +10801,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "R Audio Amp +"
-		(shape input)
-		(at 334.01 36.83 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1556c7b5-551f-48a4-825e-4bbfb8a1e0b5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 316.1132 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -11131,28 +10893,6 @@
 			)
 		)
 	)
-	(global_label "R Audio Amp -"
-		(shape input)
-		(at 334.01 41.91 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "313f8657-f234-4556-97bb-404ce828136e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 316.1132 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "LRCL_L"
 		(shape input)
 		(at 114.3 173.99 0)
@@ -11199,7 +10939,7 @@
 	)
 	(global_label "L Audio Amp -"
 		(shape input)
-		(at 334.01 39.37 180)
+		(at 334.01 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11209,7 +10949,7 @@
 		)
 		(uuid "4761bf41-3cc3-4b78-a16c-276f15ddeaef")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 316.3551 39.37 0)
+			(at 316.3551 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11298,6 +11038,28 @@
 		(uuid "5b2be9e7-3522-445f-add9-7e49432e438f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 188.8711 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "R Audio Amp +"
+		(shape input)
+		(at 334.01 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "635514f0-fb30-4501-996d-3af2e0a41a28")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 316.1132 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11573,7 +11335,7 @@
 	)
 	(global_label "Neopixel Data"
 		(shape input)
-		(at 265.43 232.41 180)
+		(at 262.89 232.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11583,7 +11345,7 @@
 		)
 		(uuid "d6fa14ae-7337-4a4e-b4a8-d7f42494bc74")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 248.9846 232.41 0)
+			(at 246.4446 232.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11721,6 +11483,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "R Audio Amp -"
+		(shape input)
+		(at 334.01 48.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f33661d5-3d7a-4e5c-ba4f-3ce21ab40d77")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 316.1132 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -12419,7 +12203,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1uf"
 			(at 374.65 218.44 90)
 			(effects
 				(font
@@ -12470,74 +12254,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
-		(at 358.14 36.83 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "15fc1e52-1d3e-4e69-9111-99a6041d56da")
-		(property "Reference" "R5"
-			(at 358.14 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_US"
-			(at 358.14 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 357.886 37.846 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 358.14 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 358.14 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e69b5867-aee1-4d36-b590-2191258b9370")
-		)
-		(pin "1"
-			(uuid "af9ba0b8-2e07-4cc8-865e-3f45b8f52f9b")
-		)
-		(instances
-			(project "dewlet"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 354.33 223.52 270)
 		(unit 1)
@@ -12555,7 +12271,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1uf"
 			(at 354.33 218.44 90)
 			(effects
 				(font
@@ -14503,7 +14219,7 @@
 		(dnp no)
 		(uuid "5fc1ed65-2d42-499b-b3b7-2712e9492a24")
 		(property "Reference" "U2"
-			(at 293.624 63.754 0)
+			(at 282.194 70.612 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -14805,7 +14521,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1uf"
 			(at 334.01 218.44 90)
 			(effects
 				(font
@@ -16309,51 +16025,55 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
-		(at 269.24 232.41 270)
+		(lib_id "2025-01-20_21-16-07:OSTTC022162")
+		(at 381 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9596c97c-2779-4eb6-9891-cc77926c6ea8")
-		(property "Reference" "R3"
-			(at 269.24 226.06 90)
+		(uuid "9860dc6e-3130-4cb0-9295-7698d153fa8b")
+		(property "Reference" "J2"
+			(at 394.97 44.4499 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "R_US"
-			(at 269.24 228.6 90)
+		(property "Value" "SPKR"
+			(at 394.97 46.9899 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 268.986 233.426 90)
+		(property "Footprint" "CONN_OSTTC022162_OST"
+			(at 381 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 269.24 232.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, US symbol"
-			(at 269.24 232.41 0)
+		(property "Datasheet" "OSTTC022162"
+			(at 381 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 381 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16362,15 +16082,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "30924404-ca7f-4b1a-89ee-93cc553f5dd2")
+			(uuid "dcceae33-8d60-4e41-b56b-5017f9d1195c")
 		)
 		(pin "1"
-			(uuid "02214640-4ed3-4950-a147-be9bde7bad1a")
+			(uuid "e46c0818-bc7c-4d88-b352-06c2c9fdcfa5")
 		)
 		(instances
-			(project ""
+			(project "dewlet"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R3")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -17112,6 +16832,75 @@
 			(project "dewlet"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "SW5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Adafruit MAX9744-eagle-import:RESISTOR0805_NOOUTLINE")
+		(at 267.97 232.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b7708010-ddaf-4715-a43f-87862d9fffe1")
+		(property "Reference" "R3"
+			(at 267.97 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7K"
+			(at 267.97 232.41 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+					(thickness 0.2032)
+					(bold yes)
+				)
+			)
+		)
+		(property "Footprint" "Adafruit MAX9744:0805-NO"
+			(at 267.97 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 267.97 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 267.97 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "58e2a521-e6f1-4cf0-ab0f-d25fc34384a4")
+		)
+		(pin "2"
+			(uuid "2a1f18eb-eeef-48ba-91eb-7366423a0bbb")
+		)
+		(instances
+			(project "dewlet"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -18481,74 +18270,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
-		(at 358.14 34.29 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e9d140a8-d9b4-47e2-9bdb-0f66a546a742")
-		(property "Reference" "R4"
-			(at 358.14 27.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_US"
-			(at 358.14 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 357.886 35.306 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 358.14 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 358.14 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ea6eb1b7-617a-441d-aa93-01d3c9907bb8")
-		)
-		(pin "1"
-			(uuid "10232516-635a-4fb2-bd27-b0361a72c827")
-		)
-		(instances
-			(project "dewlet"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Adafruit MAX9744-eagle-import:GND")
 		(at 246.38 45.72 0)
 		(unit 1)
@@ -18762,7 +18483,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1uf"
 			(at 313.69 218.44 90)
 			(effects
 				(font
