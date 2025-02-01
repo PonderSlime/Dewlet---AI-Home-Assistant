@@ -18,7 +18,7 @@ from tts_worker import TTSWorker
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-model = whisper.load_model("small",device=device)
+model = whisper.load_model("small", device)
 SAMPLE_RATE = 16000
 DURATION = 1
 PAUSE_THRESHOLD = 5
@@ -117,23 +117,29 @@ class App:
         audio_data = (audio_data * 32768).astype(np.int16)
         audio_float = audio_data.astype(np.float32) / 32768.0
 
-        for i in range(0, len(audio_data), frame_size):
-            frame = audio_data[i:i + frame_size]
-            is_speech = self.vad.is_speech(frame.tobytes(), SAMPLE_RATE)
-            if is_speech:
-                self.silence_duration = 0
-            else:
-                self.silence_duration += 1
+        #for i in range(0, len(audio_data), frame_size):
+        #    frame = audio_data[i:i + frame_size]
+        #    is_speech = self.vad.is_speech(frame.tobytes(), SAMPLE_RATE)
+        #    if is_speech:
+        #        self.silence_duration = 0
+        #    else:
+        #        self.silence_duration += 1
 
-        if self.silence_duration > 10:
+        result = model.transcribe(audio_float, language="en", fp16=False)
+        print(result["text"].strip())
+        if result["text"].strip() == "":
+            print("silence detected!")
+            self.silence_duration += 1
+        else:
+            self.silence_duration = 0
+
+        if self.silence_duration > 3:
             # print("Silence detected, stopping transcription.")
             self.silence_duration = 0
             sd.stop()
             self.process_transcription()
             return
 
-        result = model.transcribe(audio_float, language="en", fp16=False)
-        print(result["text"].strip())
         transcription_buffer += result["text"].strip()
 
     def handle_response(self, response):
@@ -178,6 +184,16 @@ class App:
         elif "spotify" in speech:
             player = "spotify"
             speech = speech.replace("spotify", "").strip()
+        elif "firefox" in speech:
+            player = "firefox"
+            speech = speech.replace("firefox", "").strip()
+        elif "chrome" in speech:
+            player = "chrome"
+            speech = speech.replace("chrome", "").strip()
+        elif "vlc" in speech:
+            player = "vlc"
+            speech = speech.replace("vlc", "").strip()
+
         if "play" in speech:
             return "play", player, True
         elif "pause" in speech:
